@@ -19,7 +19,12 @@
                                     <li class="nav-item dropdown no-caret">
                                         <a class="nav-link" href="about.php">About</a>
                                     </li>
+
+
+                                    
                                 </ul>
+
+
                                 <?php 
                                 $curr_page = basename(__FILE__);
                                     require_once("./includes/registration.php");
@@ -28,9 +33,7 @@
                         </div>
                     </nav>
 
-
-                 
-                    <?php
+ <?php
                         if(isset($_POST['search-keyword'])) {
                             $keyword = $_POST['search-keyword'];
                             $sql = "SELECT * FROM posts WHERE post_status = :status AND post_title LIKE :title";
@@ -48,6 +51,8 @@
                             }
                         }
                     ?>
+                 
+                   
 
                     <header class="page-header page-header-dark bg-gradient-primary-to-secondary">
                         <div class="page-header-content pt-10">

@@ -16,9 +16,22 @@
             setcookie('_uiid_', '', time() - 60 * 60 * 24, '/', '', '', true);
         }
 
+          //if(isset($_POST['search-keyword'])) { echo $_POST['search-keyword'] };
+        
         header("Location: {$curr_page}");
 
     }
+
+
+
+
+
+
+
+
+
+
+
 
     if(isset($_SESSION['login'])) {
 

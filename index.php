@@ -25,7 +25,7 @@
                                 </ul>
                                 <?php 
 
-
+                                        //$search_keyword=$_POST['search-keyword'];
 
                                 //current location saving
                                     $curr_page = basename(__FILE__);
