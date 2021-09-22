@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 08, 2021 at 10:22 PM
+-- Generation Time: Sep 22, 2021 at 01:30 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -33,7 +33,7 @@ CREATE TABLE `categories` (
   `category_total_posts` int(11) NOT NULL,
   `total_post_views` int(11) NOT NULL,
   `category_status` varchar(11) NOT NULL DEFAULT 'Published',
-  `created_on` date NOT NULL,
+  `created_on` varchar(255) NOT NULL,
   `created_by` varchar(155) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -97,13 +97,13 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`post_id`, `post_title`, `post_detail`, `post_category_id`, `post_image`, `post_date`, `post_status`, `post_author`, `post_views`, `post_comment_count`, `post_tags`) VALUES
-(1, 'Build a Complete Website with Backend using PHP, MySQL & PDO', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 1, 'photo2.jpg', 'Apr 4,2021 at 9.30 pm', 'Published', 'John Doe', 170, 0, 'php, mysql, pdo, php course'),
+(1, 'Build a Complete Website with Backend using PHP, MySQL & PDO', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 1, 'photo2.jpg', 'Apr 4,2021 at 9.30 pm', 'Published', 'John Doe', 172, 0, 'php, mysql, pdo, php course'),
 (2, 'I\'m a programmer, I love programming!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 2, 'photo1.jpg', 'Apr 6,2021 at 9.30 pm', 'Published', 'maria', 3, 0, 'php, mysql, pdo, php course'),
-(3, 'I love garden, do you?', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 3, 'photo3.jpg', 'Apr 10,2021 at 9.32 pm', 'Published', 'farib', 14, 0, 'garden, flowers'),
+(3, 'I love garden, do you?', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 3, 'photo3.jpg', 'Apr 10,2021 at 9.32 pm', 'Published', 'farib', 15, 0, 'garden, flowers'),
 (4, 'the most hate job I have ever had', ' lorem ipsum xxxxxxxxxxyyyyyyyy xyyyyb dvcdidjkj jfjfrjfjf  efddjfvwfs vd koi cwedscds dediejej dfenfeknfk dfnedfknfvn', 4, 'ctci-1.png', 'April 09,2021 at 9.30 a.m', 'Published', 'Rahul Gandhi', 11, 0, 'job fresher'),
 (5, 'Php is super easy', 'Php is super easy detail', 1, 'photo1.jpg', 'Apr 9,2021 at 9.30 pm', 'Published', 'rakib', 4, 0, 'cs'),
 (6, 'c++ hard', 'c++ detail', 1, 'photo1.jpg', 'Apr 9,2021 at 9.30 pm', 'Published', 'ash', 6, 0, 'cs'),
-(7, 'python', 'python essential for hacking', 1, 'photo1.jpg', 'Apr 9,2021 at 9.30 pm', 'Published', 'arf asheq', 2, 0, 'cs');
+(7, 'python', 'python essential for hacking', 1, 'photo1.jpg', 'Apr 9,2021 at 9.30 pm', 'Published', 'arf asheq', 4, 0, 'cs');
 
 -- --------------------------------------------------------
 
@@ -146,7 +146,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_name`, `user_nickname`, `user_email`, `user_password`, `user_photo`, `registered_on`, `user_role`) VALUES
-(1, 'shahan sarower', 'ss', 'tysonfarib@gmail.com', '$2y$10$Y2EpnI8wqjBBTGtCYcVwm.OMSIFYxGP4gYrt96fAqhfjMb3sWuBfi', 'default-logo.png', 'Sep 9, 2021 at 08:13 AM', 'admin');
+(1, 'asheq farib', 'ss', 'tysonfarib@gmail.com', '$2y$10$Y2EpnI8wqjBBTGtCYcVwm.OMSIFYxGP4gYrt96fAqhfjMb3sWuBfi', 'ARF.jpg', 'Sep 9, 2021 at 08:13 AM', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -190,7 +190,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `comments`
