@@ -22,6 +22,9 @@
                                     <li class="nav-item dropdown no-caret">
                                         <a class="nav-link" href="about.php">About</a>
                                     </li>
+                                    <li class="nav-item dropdown no-caret">
+                                        <a class="nav-link" href="https://localhost/arfblog/backend/">ADMINS</a>
+                                    </li>
                                 </ul>
                                 <?php 
 
