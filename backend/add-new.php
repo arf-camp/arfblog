@@ -70,6 +70,16 @@
                                 ':tags' => $post_tags,
                                 ':author_photo' => $author_photo
                             ]);
+
+                         $updatesql = "UPDATE categories SET category_total_posts = category_total_posts + 1 WHERE category_id = :id";
+                            $updatestmt = $pdo->prepare($updatesql);
+                            $updatestmt->execute([
+                                ':id' => $post_category_id
+                            ]);
+
+
+
+
                             header("Location: all-post.php");
                         }
                     ?>

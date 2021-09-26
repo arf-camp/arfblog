@@ -23,7 +23,7 @@
                                         <a class="nav-link" href="about.php">About</a>
                                     </li>
                                     <li class="nav-item dropdown no-caret">
-                                        <a class="nav-link" href="https://localhost/arfblog/backend/">ADMINS</a>
+                                        <a class="nav-link" href="https://localhost/arfblog/backend/">Blogers</a>
                                     </li>
                                 </ul>
                                 <?php 
@@ -95,6 +95,11 @@
                             $stmt = $pdo->prepare($sql4);
                             $stmt->execute();
                             $post = $stmt->fetch(PDO::FETCH_ASSOC);
+                            $count=$stmt->rowCount();
+
+ if($count>0){
+
+
                             $post_id = $post['post_id'];
                             $post_title = $post['post_title'];
                             $post_detail = substr($post['post_detail'], 0, 300);
@@ -128,7 +133,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </a>
+                            </a>    <?php  }   ?>
 
                 <?php
                                 $sql = "SELECT * FROM posts WHERE post_status = :status";

@@ -72,13 +72,39 @@
                                         <tbody>
                                             <?php 
                                                 if(isset($_POST['delete-post'])) {
+                                                    
                                                     $post_id = $_POST['post-id'];
+
+
+                     $selectsql = "SELECT post_category_id FROM posts WHERE post_id = :id";
+                                    $selectstmt = $pdo->prepare($selectsql);
+                                    $selectstmt->execute([':id'=>$post_id]);
+                                    $cat = $selectstmt->fetch(PDO::FETCH_ASSOC);
+                                    $post_category_id = $cat['post_category_id'];
+
+
+           $updatesql = "UPDATE categories SET category_total_posts = category_total_posts - 1 WHERE category_id = :id";
+                            $updatestmt = $pdo->prepare($updatesql);
+                            $updatestmt->execute([
+                                ':id' => $post_category_id
+                            ]);
+
+
+
+
+                                                   
                                                     $sql = "DELETE FROM posts WHERE post_id = :id";
                                                     $stmt = $pdo->prepare($sql);
                                                     $stmt->execute([
                                                         ':id' => $post_id
                                                     ]);
-                                                    header("Location: all-post.php");
+
+                                    
+
+
+
+                 header("Location: all-post.php");
+
                                                 }
                                             ?>
 
@@ -155,3 +181,8 @@
                 </main>
 
 <?php require_once('./includes/footer.php'); ?>
+
+
+
+
+

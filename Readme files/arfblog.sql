@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 22, 2021 at 01:30 PM
+-- Generation Time: Sep 26, 2021 at 11:52 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -42,10 +42,8 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`category_id`, `category_name`, `category_total_posts`, `total_post_views`, `category_status`, `created_on`, `created_by`) VALUES
-(1, 'programming', 1, 26, 'Published', '2021-08-31', 'arf'),
-(2, 'lifestyle', 1, 45, 'Published', '2021-08-30', 'john doe'),
-(3, 'php', 1, 0, 'Published', '2021-08-31', 'arf'),
-(4, 'javascript', 1, 0, 'Published', '2021-09-01', 'bushra');
+(11, 'Computer fundamental', 1, 0, 'Published', 'Sep 9, 2021 at 11:40 PM', 'arf'),
+(12, 'Operating system', 1, 0, 'Published', 'Sep 9, 2021 at 11:47 PM', 'arf');
 
 -- --------------------------------------------------------
 
@@ -60,17 +58,26 @@ CREATE TABLE `comments` (
   `com_user_id` int(11) NOT NULL,
   `com_user_name` varchar(255) NOT NULL,
   `com_date` varchar(255) NOT NULL,
-  `com_status` varchar(255) NOT NULL DEFAULT 'unapproved'
+  `com_status` varchar(255) NOT NULL DEFAULT 'unapproved',
+  `comment_state` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `comments`
+-- Table structure for table `messages`
 --
 
-INSERT INTO `comments` (`com_id`, `com_post_id`, `com_detail`, `com_user_id`, `com_user_name`, `com_date`, `com_status`) VALUES
-(1, 1, 'great post', 1, 'shahan sarower', 'Sep 9, 2021 at 12:31 AM', 'approved'),
-(2, 1, 'nyc post', 1, 'shahan sarower', 'Sep 9, 2021 at 01:24 AM', 'unapproved'),
-(3, 1, 'give response', 1, 'shahan sarower', 'Sep 9, 2021 at 01:36 AM', 'unapproved');
+CREATE TABLE `messages` (
+  `ms_id` int(11) NOT NULL,
+  `ms_username` varchar(255) NOT NULL,
+  `ms_useremail` varchar(255) NOT NULL,
+  `ms_detail` text NOT NULL,
+  `ms_date` varchar(255) NOT NULL,
+  `ms_status` varchar(255) NOT NULL DEFAULT 'pending',
+  `ms_state` int(11) NOT NULL DEFAULT 0,
+  `reply` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -89,21 +96,17 @@ CREATE TABLE `posts` (
   `post_author` varchar(255) NOT NULL,
   `post_views` int(11) NOT NULL DEFAULT 0,
   `post_comment_count` int(11) NOT NULL DEFAULT 0,
-  `post_tags` text NOT NULL
+  `post_tags` text NOT NULL,
+  `author_photo` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `posts`
 --
 
-INSERT INTO `posts` (`post_id`, `post_title`, `post_detail`, `post_category_id`, `post_image`, `post_date`, `post_status`, `post_author`, `post_views`, `post_comment_count`, `post_tags`) VALUES
-(1, 'Build a Complete Website with Backend using PHP, MySQL & PDO', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 1, 'photo2.jpg', 'Apr 4,2021 at 9.30 pm', 'Published', 'John Doe', 172, 0, 'php, mysql, pdo, php course'),
-(2, 'I\'m a programmer, I love programming!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 2, 'photo1.jpg', 'Apr 6,2021 at 9.30 pm', 'Published', 'maria', 3, 0, 'php, mysql, pdo, php course'),
-(3, 'I love garden, do you?', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 3, 'photo3.jpg', 'Apr 10,2021 at 9.32 pm', 'Published', 'farib', 15, 0, 'garden, flowers'),
-(4, 'the most hate job I have ever had', ' lorem ipsum xxxxxxxxxxyyyyyyyy xyyyyb dvcdidjkj jfjfrjfjf  efddjfvwfs vd koi cwedscds dediejej dfenfeknfk dfnedfknfvn', 4, 'ctci-1.png', 'April 09,2021 at 9.30 a.m', 'Published', 'Rahul Gandhi', 11, 0, 'job fresher'),
-(5, 'Php is super easy', 'Php is super easy detail', 1, 'photo1.jpg', 'Apr 9,2021 at 9.30 pm', 'Published', 'rakib', 4, 0, 'cs'),
-(6, 'c++ hard', 'c++ detail', 1, 'photo1.jpg', 'Apr 9,2021 at 9.30 pm', 'Published', 'ash', 6, 0, 'cs'),
-(7, 'python', 'python essential for hacking', 1, 'photo1.jpg', 'Apr 9,2021 at 9.30 pm', 'Published', 'arf asheq', 4, 0, 'cs');
+INSERT INTO `posts` (`post_id`, `post_title`, `post_detail`, `post_category_id`, `post_image`, `post_date`, `post_status`, `post_author`, `post_views`, `post_comment_count`, `post_tags`, `author_photo`) VALUES
+(15, 'Random Access Memory', 'RAM (Random Access Memory) is the internal memory of the CPU for storing data, programs, and program results. It is a read/write memory that stores data until the machine is working. As soon as the machine is switched off, data is erased.\r\nAccess time in RAM is independent of the address, that is, each storage location inside the memory is as easy to reach as other locations and takes the same amount of time. Data in the RAM can be accessed randomly but it is very expensive.\r\n\r\nRAM is volatile, i.e. data stored in it is lost when we switch off the computer or if there is a power failure. Hence, a backup Uninterruptible Power System (UPS) is often used with computers. RAM is small, both in terms of its physical size and in the amount of data it can hold.\r\n\r\nRAM is of two types −\r\n\r\nStatic RAM (SRAM)\r\nDynamic RAM (DRAM)', 11, 'primary_memory.jpg', 'Sep 9, 2021 at 11:43 PM', 'Published', 'asheq farib', 1, 0, 'RAM,CSE.CS.COMPUTER MEMORY', 'ARF.jpg'),
+(16, 'Why to Learn Operating System?', 'An operating system (OS) is a collection of software that manages computer hardware resources and provides common services for computer programs. The operating system is a vital component of the system software in a computer system. This tutorial will take you through step by step approach while learning Operating System concepts.\r\n\r\nWhy Learn Operating System?\r\nAn Operating System (OS) is an interface between a computer user and computer hardware. An operating system is a software that performs all the basic tasks like file management, memory management, process management, handling input and output, and controlling peripheral devices such as disk drives and printers.\r\n\r\nSome popular Operating Systems include Linux Operating System, Windows Operating System, VMS, OS/400, AIX, z/OS, etc.\r\n\r\nApplications of Operating System\r\nFollowing are some of the important activities that an Operating System performs −\r\n\r\nSecurity − By means of passwords and similar other techniques, it prevents unauthorized access to programs and data.\r\n\r\nControl over system performance − Recording delays between requests for a service and responses from the system.\r\n\r\nJob accounting − Keeping track of time and resources used by various jobs and users.\r\n\r\nError detecting aids − Production of dumps, traces, error messages, and other debugging and error detecting aids.\r\n\r\nCoordination between other software and users − Coordination and assignment of compilers, interpreters, assemblers and other software to the various users of the computer systems.', 12, 'Operating_System.jpg', 'Sep 9, 2021 at 11:50 PM', 'Published', 'asheq farib', 1, 0, 'windows,Linux,os,mac', 'ARF.jpg');
 
 -- --------------------------------------------------------
 
@@ -146,7 +149,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_name`, `user_nickname`, `user_email`, `user_password`, `user_photo`, `registered_on`, `user_role`) VALUES
-(1, 'asheq farib', 'ss', 'tysonfarib@gmail.com', '$2y$10$Y2EpnI8wqjBBTGtCYcVwm.OMSIFYxGP4gYrt96fAqhfjMb3sWuBfi', 'ARF.jpg', 'Sep 9, 2021 at 08:13 AM', 'admin');
+(1, 'asheq farib', 'arf', 'tysonfarib@gmail.com', '$2y$10$kCcF0pLSX/Qfh7CA9WJG3ujzGGN6uM72ACZr/Qwi2ODXdCn7cRoyS', 'ARF.jpg', 'Sep 9, 2021 at 08:13 AM', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -163,6 +166,12 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`com_id`);
+
+--
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`ms_id`);
 
 --
 -- Indexes for table `posts`
@@ -190,19 +199,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `com_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `com_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `ms_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `test`
@@ -214,7 +229,7 @@ ALTER TABLE `test`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

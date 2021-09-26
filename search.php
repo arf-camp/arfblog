@@ -62,6 +62,7 @@
                             $stmt->execute([
                                 ':status' => 'Published',
                                 ':title' => '%'. trim($keyword) .'%'
+                            
                             ]);
                             $post_found = 0;
                             $count = $stmt->rowCount();

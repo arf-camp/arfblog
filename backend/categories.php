@@ -109,6 +109,20 @@
                                                                     $stmt->execute([
                                                                         ':id' => $_POST['id']
                                                                     ]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                                                     header("Location: categories.php");
                                                                 }
                                                             ?>
