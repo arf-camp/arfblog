@@ -105,10 +105,11 @@
                                                                 <?php 
                                                                     if(isset($_POST['approve'])) {
                                                                         $comment_id = $_POST['com_id'];
-                                                                        $sql = "UPDATE comments SET com_status = :status WHERE com_id = :id";
+                                                                        $sql = "UPDATE comments SET com_status = :status, comment_state = :state WHERE com_id = :id";
                                                                         $stmt = $pdo->prepare($sql);
                                                                         $stmt->execute([
                                                                             ':status' => 'approved',
+                                                                            ':state' => 1,
                                                                             ':id' => $comment_id
                                                                         ]);
                                                                         header("Location: comments.php");
@@ -126,13 +127,14 @@
                                                                 ?>
                                                             </td>
                                                             <td>
-                                                                <?php 
+                                                               <?php 
                                                                     if(isset($_POST['unapprove'])) {
                                                                         $comment_id = $_POST['com_id'];
-                                                                        $sql = "UPDATE comments SET com_status = :status WHERE com_id = :id";
+                                                                        $sql = "UPDATE comments SET com_status = :status, comment_state = :state WHERE com_id = :id";
                                                                         $stmt = $pdo->prepare($sql);
                                                                         $stmt->execute([
                                                                             ':status' => 'unapproved',
+                                                                            ':state' => 0,
                                                                             ':id' => $comment_id
                                                                         ]);
                                                                         header("Location: comments.php");

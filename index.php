@@ -101,6 +101,7 @@
                             $post_author = $post['post_author'];
                             $post_date = $post['post_date'];
                             $post_image = $post['post_image'];
+                            $author_photo=$post['author_photo'];
                         ?>
 
 
@@ -118,7 +119,7 @@
                                             </div>
                                             <hr />
                                             <div class="post-preview-meta">
-                                                <img class="post-preview-meta-img" src="./img/mdabarik.jpg" />
+                                                <img class="post-preview-meta-img" src="./backend/assets/img/<?php echo $author_photo; ?>" />
                                                 <div class="post-preview-meta-details">
                                                     <div class="post-preview-meta-details-name"><?php echo $post_author; ?></div>
                                                     <div class="post-preview-meta-details-date"><?php echo $post_date; ?></div>
@@ -185,7 +186,7 @@
                                        
                          <div class="card-footer d-flex align-items-center justify-content-between">
                                                         <div class="post-preview-meta">
-                                                            <img class="post-preview-meta-img" src="./img/mdabarik.jpg" />
+                                                            <img class="post-preview-meta-img" src="./backend/assets/img/<?php echo $author_photo; ?>" />
                                                             <div class="post-preview-meta-details">
                                                                 <div class="post-preview-meta-details-name"><?php echo $post_author; ?></div>
                                                                 <div class="post-preview-meta-details-date"><?php echo $post_date; ?></div>
@@ -296,7 +297,7 @@
                                                     </div>
                                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                                         <div class="post-preview-meta">
-                                                            <img class="post-preview-meta-img" src="./img/mdabarik.jpg" />
+                                                            <img class="post-preview-meta-img" src="./backend/assets/img/<?php echo $author_photo; ?>" />
                                                             <div class="post-preview-meta-details">
                                                                 <div class="post-preview-meta-details-name"><?php echo $post_author; ?></div>
                                                                 <div class="post-preview-meta-details-date"><?php echo $post_date; ?></div>
@@ -391,7 +392,7 @@
                     <div class="container">
                         <hr class="mb-1" />
                         <div class="row align-items-center">
-                            <div class="col-md-6 small">Copyright &#xA9; ArfBlog 2021</div>
+                            <div class="col-md-6 small" >Copyright &#xA9; ArfBlog 2021</div>
                             <div class="col-md-6 text-md-right small">
                                 <a href="privacy-policy.php">Privacy Policy</a>
                                 &#xB7;

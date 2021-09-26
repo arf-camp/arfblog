@@ -16,7 +16,7 @@
             ?>
             
              <?php 
-                if($curr_page == 'all-posts.php' || $curr_page == 'new-page.php' || $curr_page == 'add-new.php') { ?>
+                if($curr_page == 'all-post.php' || $curr_page == 'new-page.php' || $curr_page == 'add-new.php') { ?>
                     <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="true" aria-controls="collapseLayouts"><div class="nav-link-icon"><i data-feather="layout"></i></div>
                         Posts
                         <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -56,24 +56,43 @@
             ?>
             
 
-            <a class="nav-link" href="../index.php" ><div class="nav-link-icon"><i data-feather="book-open"></i></div>
-                Home
-            </a>
+            
 
-            <a class="nav-link" href="users.php" ><div class="nav-link-icon"><i data-feather="users"></i></div>
-                Users
-            </a>
+              <?php 
+                if($curr_page == 'user-update.php' || $curr_page == 'new-user.php' || $curr_page == 'users.php') { ?>
+                    <a class="nav-link active" href="users.php" ><div class="nav-link-icon"><i data-feather="users"></i></div>
+                        Users
+                    </a>
+                <?php } else { ?>
+                    <a class="nav-link" href="users.php" ><div class="nav-link-icon"><i data-feather="users"></i></div>
+                        Users
+                    </a>
+                <?php }
+            ?>
 
             <a class="nav-link" href="comments.php" ><div class="nav-link-icon"><i data-feather="package"></i></div>
                 Comments
             </a>
 
-            <a class="nav-link" href="messages.php" ><div class="nav-link-icon"><i data-feather="mail"></i></div>
-                Messages
-            </a>
+            <?php 
+                if($curr_page == 'messages.php' || $curr_page == 'reply.php') { ?>
+                    <a class="nav-link active" href="messages.php" ><div class="nav-link-icon"><i data-feather="mail"></i></div>
+                        Messages
+                    </a>
+               <?php } else { ?>
+                    <a class="nav-link" href="messages.php" ><div class="nav-link-icon"><i data-feather="mail"></i></div>
+                        Messages
+                    </a>
+              <?php }
+            ?>
 
             <a class="nav-link" href="profile.php" ><div class="nav-link-icon"><i data-feather="user"></i></div>
                 Profile
+            </a>
+
+
+            <a class="nav-link" href="../index.php" ><div class="nav-link-icon"><i data-feather="book-open"></i></div>
+                Home
             </a>
         </div>
     </div>

@@ -41,6 +41,7 @@
                         ]);
                         $user = $stmt->fetch(PDO::FETCH_ASSOC);
                         $user_name = $user['user_name'];
+                        $author_photo = $user['user_photo'];
                     ?>
 
                     <?php 
@@ -54,7 +55,7 @@
                             move_uploaded_file("{$post_photo_tmp}", "./../img/{$post_photo}");
                             $post_detail = $_POST['post-detail'];
                             $post_tags = $_POST['post-tags'];
-                            $sql = "INSERT INTO posts (post_category_id, post_title, post_detail, post_image, post_date, post_status, post_author, post_views, post_comment_count, post_tags) VALUES (:id, :title, :detail, :image, :date, :status, :author, :views, :comment, :tags)";
+                            $sql = "INSERT INTO posts (post_category_id, post_title, post_detail, post_image, post_date, post_status, post_author, post_views, post_comment_count, post_tags, author_photo) VALUES (:id, :title, :detail, :image, :date, :status, :author, :views, :comment, :tags, :author_photo)";
                             $stmt = $pdo->prepare($sql);
                             $stmt->execute([
                                 ':id' => $post_category_id,
@@ -66,7 +67,8 @@
                                 ':author' => $user_name,
                                 ':views' => 0,
                                 ':comment' => 0,
-                                ':tags' => $post_tags
+                                ':tags' => $post_tags,
+                                ':author_photo' => $author_photo
                             ]);
                             header("Location: all-post.php");
                         }
