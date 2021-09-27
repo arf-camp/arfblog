@@ -31,7 +31,7 @@
                      <?php 
                         if(isset($_POST['edit'])) {
                             $id = $_POST['edit-id'];
-                            $url = "http://localhost/arfblog/backend/edit-category.php?id=".$id;
+                            $url = FRONT_SITE_PATH."backend/edit-category.php?id=".$id;
                             header("Location: {$url}");
                         }
                     ?>

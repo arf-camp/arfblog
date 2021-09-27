@@ -15,7 +15,7 @@
  <?php 
                 if(isset($_POST['response'])) {
                     $id = $_POST['id'];
-                    $url = "http://localhost/arfblog/backend/reply.php?id=".$id;
+                    $url = FRONT_SITE_PATH."backend/reply.php?id=".$id;
                     header("Location: {$url}");
                 }
             ?>

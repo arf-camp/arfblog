@@ -17,7 +17,7 @@
               <?php 
                 if(isset($_POST['edit-post'])) {
                     $post_id = $_POST['post-id'];
-                    $url = "http://localhost/arfblog/backend/edit-post.php?post_id=".$post_id;
+                    $url = FRONT_SITE_PATH."backend/edit-post.php?post_id=".$post_id;
                     header("Location: {$url}");
                 }
             ?>

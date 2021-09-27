@@ -15,7 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title>SIGN in || Admin Panel</title>
         <link href="css/styles.css" rel="stylesheet" />
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.png" />
+        <link rel="icon" type="image/x-icon" href="../img/myLogo.jpg" />
         <script data-search-pseudo-elements defer src="js/all.min.js"></script>
         <script src="js/feather.min.js"></script>
     </head>
@@ -74,7 +74,7 @@
                                                 $_SESSION['user_nickname'] = $user['user_nickname'];
                                                 $_SESSION['user_role'] = $user_role;
                                                 $_SESSION['login'] = 'success';
-                                                header("Refresh:2;url=../index.php");
+                                                header("Refresh:1;url=../index.php");
                                             } else {
                                                 $error_password = "Wrong password!";
                                             }

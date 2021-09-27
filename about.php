@@ -46,10 +46,10 @@
                         <div class="container">
                             <div>
                                 <h1>About us:</h1>
-                                <p class="lead">You can use this page as a starting point to create your own custom pages, or choose an already built example page to start development!</p>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui quisquam animi temporibus ipsum iusto necessitatibus laudantium beatae. Eligendi dolorum laudantium numquam? Officiis nemo error animi aliquam dolor consequatur ducimus unde.</p>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui repellat magni eaque beatae explicabo fugit placeat earum, dolores quaerat aperiam vero adipisci quidem minus officiis blanditiis unde? Incidunt, ea ad.</p>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis sed illum soluta, quaerat et deleniti magnam laudantium, non omnis numquam quos placeat. Porro autem consectetur dolor minima voluptatum modi maiores.</p>
+                                <p class="lead">This is a demo project made by <b>MD ASHEQUR RAHMAN</b></p>
+                                
+                                <p>If you want to be a blogger on our site Contact us</p>
+                                <p>It facilitates two types of users i.e. Bloggers and Subscriber.All the bloggers can manage thier and others profile,post,comments from blogger section whereas subscriber can only see the post and comment on the posts. <br>About other features you can get a idea by simply sign up.</p>
                             </div>
 
                         </div>
@@ -60,21 +60,6 @@
                     </section>
                 </main>
             </div>
-            <div id="layoutDefault_footer">
-                <footer class="footer pt-4 pb-4 mt-auto bg-dark footer-dark">
-                    <div class="container">
-                        <hr class="my-1" />
-                        <div class="row align-items-center">
-                            <div class="col-md-6 small">Copyright &#xA9; Your Website 2020</div>
-                            <div class="col-md-6 text-md-right small">
-                                <a href="privacy-policy.php">Privacy Policy</a>
-                                &#xB7;
-                                <a href="terms-conditions.php">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-            </div>
-        </div>
+          
 
 <?php require_once("./includes/footer.php"); ?>

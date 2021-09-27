@@ -16,7 +16,7 @@
 <?php 
                 if(isset($_POST['edit-user'])) {
                     $user_id = $_POST['user-id'];
-                    $url = "http://localhost/arfblog/backend/user-update.php?user_id=".$user_id;
+                    $url = FRONT_SITE_PATH."backend/user-update.php?user_id=".$user_id;
                     header("Location: {$url}");
                 }
 

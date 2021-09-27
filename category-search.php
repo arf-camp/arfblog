@@ -7,7 +7,7 @@
                     
                     <nav class="navbar navbar-marketing navbar-expand-lg bg-white navbar-light">
                         <div class="container">
-                            <a class="navbar-brand text-dark" href="index.php">TechBarik</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><img src="img/menu.png" style="height:20px;width:25px" /><i data-feather="menu"></i></button>
+                            <a class="navbar-brand text-dark" href="index.php">ArfBlog</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><img src="img/menu.png" style="height:20px;width:25px" /><i data-feather="menu"></i></button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav ml-auto mr-lg-5">
                                     <li class="nav-item">
@@ -37,7 +37,7 @@
 
                <?php 
                         if(isset($_POST['search-keyword'])) {
-                            $url = "http://localhost/arfblog/category-search.php?key=".$_POST['search-keyword']."&cat_id=".$_POST['category-id'];
+                            $url =FRONT_SITE_PATH."/category-search.php?key=".$_POST['search-keyword']."&cat_id=".$_POST['category-id'];
                             header("Location: {$url}");
                         }
                     ?>
@@ -218,21 +218,6 @@
                     </section>
                 </main>
             </div>
-            <div id="layoutDefault_footer">
-                <footer class="footer pt-4 pb-4 mt-auto bg-dark footer-dark">
-                    <div class="container">
-                        <hr class="my-1" />
-                        <div class="row align-items-center">
-                            <div class="col-md-6 small">Copyright &#xA9; Your Website 2020</div>
-                            <div class="col-md-6 text-md-right small">
-                                <a href="privacy-policy.php">Privacy Policy</a>
-                                &#xB7;
-                                <a href="terms-conditions.php">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-            </div>
-        </div>
+            
 
 <?php require_once("./includes/footer.php"); ?>

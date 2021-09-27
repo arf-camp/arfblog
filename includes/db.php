@@ -1,5 +1,6 @@
 <?php
 
+
 	$dsn = "mysql:host=localhost;dbname=arfblog";
 
 	try {
@@ -9,4 +10,9 @@
 		echo $e->getMessage();
 	}
 
+    
+
+
+//site path
+define('FRONT_SITE_PATH',"http://127.0.0.1/arfblog/");
 ?>
