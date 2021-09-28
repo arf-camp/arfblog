@@ -46,7 +46,7 @@
                             $stmt->execute([
                                 ':cat_name' => $category_name,
                                 ':cat_status' => $category_status,
-                                ':created_on' => date("M n, Y") . ' at ' . date("h:i A"),
+                                ':created_on' => date("M l jS, Y") . ' at ' . date("h:i A"),
                                 ':created_by' => $user_name
                             ]);
                             header("Location: categories.php");

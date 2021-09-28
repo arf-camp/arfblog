@@ -11,7 +11,7 @@
 	}
 
     
-
+date_default_timezone_set('Asia/Dhaka');
 
 //site path
 define('FRONT_SITE_PATH',"http://127.0.0.1/arfblog/");

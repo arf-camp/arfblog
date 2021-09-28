@@ -67,7 +67,7 @@
                                     ':email' => $user_email,
                                     ':password' => $user_password,
                                     ':photo' => $user_photo,
-                                    ':date' => date("M n, Y") . ' at ' . date("h:i A"),
+                                    ':date' => date("M l jS, Y") . ' at ' . date("h:i A"),
                                     ':role' => $user_role
                                 ]);
                                 header("Location: users.php");

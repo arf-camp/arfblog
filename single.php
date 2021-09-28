@@ -197,7 +197,7 @@
                                                             ':com_detail' => $comments,
                                                             ':user_id' => $signed_in_user_id,
                                                             ':user_name' => $user_name,
-                                                            ':com_date' => date("M n, Y") . ' at ' . date("h:i A"),
+                                                            ':com_date' => date("M l jS, Y") . ' at ' . date("h:i A"),
                                                             ':com_status' => 'unapproved'
                                                         ]);
                                                         header("Location: single.php?post_id={$_GET['post_id']}");

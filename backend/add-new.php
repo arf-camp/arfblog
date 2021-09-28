@@ -62,7 +62,7 @@
                                 ':title' => $post_title,
                                 ':detail' => $post_detail,
                                 ':image' => $post_photo,
-                                ':date' => date("M n, Y") . ' at ' . date("h:i A"),
+                                ':date' => date("M l jS, Y") . ' at ' . date("h:i A"),
                                 ':status' => $post_status,
                                 ':author' => $user_name,
                                 ':views' => 0,

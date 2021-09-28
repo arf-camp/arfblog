@@ -3,7 +3,7 @@
 
 <?php
     if(isset($_SESSION['login']) || isset($_COOKIE['_uid_']) || isset($_COOKIE['_uiid_'])) {
-        header("Location: ../index.php");
+        redirect(FRONT_SITE_PATH.'index.php');
     }
 ?>
 
@@ -13,7 +13,7 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>SIGN in || Admin Panel</title>
+        <title>SIGN in||ArfBlog</title>
         <link href="css/styles.css" rel="stylesheet" />
         <link rel="icon" type="image/x-icon" href="../img/myLogo.jpg" />
         <script data-search-pseudo-elements defer src="js/all.min.js"></script>
@@ -74,7 +74,12 @@
                                                 $_SESSION['user_nickname'] = $user['user_nickname'];
                                                 $_SESSION['user_role'] = $user_role;
                                                 $_SESSION['login'] = 'success';
-                                                header("Refresh:1;url=../index.php");
+                            // header("Refresh:1;url=../index.php");
+                            
+                            // header("Refresh:1;url=".FRONT_SITE_PATH);
+                            
+                            redirect(FRONT_SITE_PATH.'index.php');
+                            
                                             } else {
                                                 $error_password = "Wrong password!";
                                             }
@@ -134,3 +139,21 @@
         <script src="js/scripts.js"></script>
     </body>
 </html>
+
+
+<?php 
+
+function redirect($link){
+    ?>
+    <script>
+    window.location.href='<?php echo $link?>';
+    </script>
+    <?php
+    die();
+}
+
+
+
+
+ ?>
+

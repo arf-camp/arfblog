@@ -74,7 +74,7 @@
                                                     ':username' => $user_name,
                                                     ':email' => $user_email,
                                                     ':detail' => $message,
-                                                    ':date' => date("M n, Y") . ' at ' . date("h:i A")
+                                                    ':date' => date("M l jS, Y") . ' at ' . date("h:i A")
                                                 ]);
                                                 echo "<p class='alert alert-success'>Message has been send successfully!</p>";
                                             }

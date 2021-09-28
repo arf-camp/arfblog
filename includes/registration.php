@@ -25,14 +25,6 @@
 
 
 
-
-
-
-
-
-
-
-
     if(isset($_SESSION['login'])) {
 
         $user_id = $_SESSION['user_id'];

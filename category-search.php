@@ -128,7 +128,12 @@
                                             $post_image = $posts['post_image'];
                                             $post_date = $posts['post_date'];
                                             $post_author = $posts['post_author'];
-                                            $post_views = $posts['post_views']; ?>
+                                            $post_views = $posts['post_views'];
+                                            $author_photo=$posts['author_photo'];
+
+
+
+                                             ?>
 
                                             <div class="col-md-6 col-xl-4 mb-5">
                                                 <a class="card post-preview lift h-100" href="single.php?post_id=<?php echo $post_id; ?>"
@@ -139,7 +144,7 @@
                                                     </div>
                                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                                         <div class="post-preview-meta">
-                                                            <img class="post-preview-meta-img" src="./img/mdabarik.jpg" />
+                                                            <img class="post-preview-meta-img" src="./backend/assets/img/<?php echo $author_photo; ?>" />
                                                             <div class="post-preview-meta-details">
                                                                 <div class="post-preview-meta-details-name"><?php echo $post_author; ?></div>
                                                                 <div class="post-preview-meta-details-date"><?php echo $post_date; ?></div>
